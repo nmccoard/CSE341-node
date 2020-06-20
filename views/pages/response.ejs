@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="author" content="Nate McCoard">
+   <title>Wk09 Postage Results</title>
+
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+   <!-- Nav Bar Stuff -->
+   <header class="navbar navbar-expand flex-column flex-md-row bg-light navbar-light sticky-top">
+      <div class="navbar-nav-scroll">
+         <ul class="navbar-nav bd-navbar-nav flex-row">
+            <li class="nav-item">
+               <img src=".\images\mccoard.png" alt="Logo" style="width:200px;">
+            </li>
+         </ul>
+      </div>
+      <!-- Links -->
+      <ul class="navbar-nav flex-row ml-md-auto d-none d-md-flex">
+         <li class="nav-item">
+            <a class="nav-link" href="#">Test 1</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link active" href="\wk09Form.html">Postage Calculator</a>
+         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="#">Test 3</a>
+         </li>
+      </ul>
+   </header>
+   <div class="container mb-2">
+      <h1>Postage Calculator Results</h1>
+      <hr>
+      <h2>Your <%= type %> weighing <%= weight %> oz will cost: <%= result %></h2>
+      <a href="\wk09Form.html" class="btn btn-info" role="button">Back to Postage Calculator</a>
+   </div>
+</body>
+
+</html>

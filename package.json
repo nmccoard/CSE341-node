@@ -1,13 +1,13 @@
 {
-  "name": "node-js-getting-started",
+  "name": "node-week-nine-assignment",
   "version": "0.3.0",
-  "description": "A sample Node.js app using Express 4",
+  "description": "Week 09 assignment postage calculator",
   "engines": {
     "node": "12.x"
   },
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node server.js",
     "test": "node test.js"
   },
   "dependencies": {
@@ -20,12 +20,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/heroku/node-js-getting-started"
+    "url": ""
   },
   "keywords": [
     "node",
     "heroku",
     "express"
   ],
-  "license": "MIT"
+  "license": ""
 }

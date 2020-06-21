@@ -81,7 +81,7 @@ express()
         } else {
           params.result = "Error, Large Envelopes can't weight more then 13 oz. Please call post office for pricing";
         }
-        params.type = "Large Envelop";
+        params.type = "Large Envelope";
         break;
       case "package":
         if (oz > 0 && oz <= 4){
@@ -101,7 +101,15 @@ express()
         params.result = "Error, it looks like something not quite right. Please try again";
         break;
     }
-    res.render("pages/response", params);
+
+    if(query.format && query.format === 'json') {
+      res.setHeader('Content-Type', 'application/json');
+      res.end(JSON.stringify(params));
+    } else {
+      res.setHeader('Content-Type', 'text/html');
+      res.render("pages/response", params);
+    }
+    
   })
 
   .listen(PORT, () => console.log(`Listening on ${ PORT }`))

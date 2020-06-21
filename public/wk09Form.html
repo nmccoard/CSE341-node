@@ -7,6 +7,7 @@
    <title>Wk09 Postage Form</title>
 
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+   <link rel="stylesheet" href="stylesheets/wk09.css"/>
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </head>
@@ -60,13 +61,21 @@
             <span class="slider_label"></span>
          </div>
          <div id="row mb-3">
-            <div class="col-3">
+            <div class="col-2">
                <button type="submit" class="btn btn-info mb-2 form-control" id="searchBTN"
                   name="searchBTN">Submit</button>
+            </div>
+            <div class="col-2">
+               <button type="button" class="btn btn-warning mb-2" id="submitJson">AJAX</button>
             </div>
          </div>
       </form>
    </div>
+   <div id="postageCost" class ="container mb-2">
+      <hr>
+      <h5>Cost: <span id="results"></span></h5>
+   </div>
+
    <script>
       $(function () {
          $('.slider').on('input change', function () {
@@ -77,6 +86,27 @@
             $(this).html(value);
          });
       })
+
+      $("#submitJson").on('click', function (event) {
+
+         event.preventDefault();
+
+         $('#postageCost').css("visibility", "visible")
+
+         var data = $("form").serialize();
+         data += '&format=json';
+
+         $.ajax({
+            url: "/postage",
+            type: "GET",
+            dataType: 'json',
+            data: data,
+            complete: function (response) {
+               let test = response.responseJSON;
+               $('#results').text(test["result"]);
+            }
+         });
+      });
    </script>
 </body>
 

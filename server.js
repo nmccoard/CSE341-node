@@ -9,7 +9,7 @@ express()
   .set('view engine', 'ejs')
   .get('/', (req, res) => {
     console.log('Received a request for the root (/)')
-    res.sendFile(__dirname + "public/wk09Form.html");
+    res.render("pages/index");
   })
 
   .get('/postage', (req, res) => {
